@@ -1,4 +1,3 @@
-addr: ":9090"
 dbs:
   - path: /var/lib/db
     replicas:
