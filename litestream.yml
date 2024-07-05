@@ -1,0 +1,8 @@
+addr: ":9090"
+dbs:
+  - path: /var/lib/db
+    replicas:
+      - type: s3
+        bucket: ResellerHub
+        endpoint: s3.us-east-005.backblazeb2.com
+        path: db
