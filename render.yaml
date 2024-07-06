@@ -1,0 +1,12 @@
+services:
+  # A Docker web service
+  - type: web
+    name: litestreamdb
+    runtime: docker
+    region: frankfurt
+    repo: https://github.com/Kkbrothers8795/Litestream-DB.git # optional
+    plan: free # optional (defaults to starter)
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
