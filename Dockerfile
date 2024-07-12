@@ -1,14 +1,8 @@
-FROM litestream/litestream
+FROM easypanel/easypanel
 
-RUN mkdir -p /data
-COPY . .
 
-VOLUME /workspace/data:/data
-VOLUME /workspace/litestream.yml:/etc/litestream.yml
+EXPOSE 3000:3000
+EXPOSE 80:80
+EXPOSE 443:443
 
-ENV LITESTREAM_ACCESS_KEY_ID=$LITESTREAM_ACCESS_KEY_ID #S3 Access Key
-ENV LITESTREAM_SECRET_ACCESS_KEY=$LITESTREAM_SECRET_ACCESS_KEY #S3 Secret Key
-
-EXPOSE 8080
-
-CMD [ "./run.sh" ]
+CMD easypanel/easypanel setup
